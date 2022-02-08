@@ -1,0 +1,7 @@
+/vendor/
+/node_modules/
+/svn/
+/build/
+/build-wporg/
+languages/taxonomyblock.pot
+languages/taxonomyblock-es_ES-backup*

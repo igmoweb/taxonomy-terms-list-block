@@ -1,0 +1,62 @@
+{
+	"name": "taxonomy-terms-list-block",
+	"version": "1.0.0",
+	"description": "Displays a list of a post terms for a selected taxonomy.",
+	"main": "taxonomy-block.php",
+	"scripts": {
+		"build": "run-p build:*",
+		"build:scripts": "wp-scripts build",
+		"build:grunt": "grunt",
+		"check-engines": "wp-scripts check-engines",
+		"check-licenses": "wp-scripts check-licenses",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"lint:md:docs": "wp-scripts lint-md-docs",
+		"lint:md:js": "wp-scripts lint-md-js",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"packages-update": "wp-scripts packages-update",
+		"start": "wp-scripts start",
+		"test:e2e": "wp-scripts test-e2e",
+		"test:unit": "wp-scripts test-unit-js"
+	},
+	"author": "Ignacio Cruz <igmoweb@gmail.com>",
+	"license": "ISC",
+	"devDependencies": {
+		"@wordpress/prettier-config": "^1.1.1",
+		"@wordpress/scripts": "^19.2.2",
+		"grunt": "^1.0.4",
+		"grunt-checktextdomain": "^1.0.1",
+		"grunt-contrib-clean": "^2.0.0",
+		"grunt-contrib-copy": "^1.0.0",
+		"grunt-regex-replace": "^0.4.0",
+		"grunt-replace": "^1.0.1",
+		"grunt-search": "^0.1.8",
+		"grunt-shell": "^3.0.1",
+		"grunt-wp-i18n": "^1.0.3",
+		"husky": "^3.1.0",
+		"lint-staged": "^9.5.0",
+		"load-grunt-tasks": "^5.1.0",
+		"npm-run-all": "^4.1.5",
+		"prettier": "^2.5.1"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"**/*.php": [
+			"./vendor/bin/phpcbf --standard=phpcs.xml .",
+			"git add"
+		]
+	},
+	"testedupto": "5.9",
+	"requires": "5.8",
+	"requires_php": "7.4",
+	"dependencies": {
+		"@wordpress/edit-post": "^5.0.17",
+		"@wordpress/plugins": "^4.0.6"
+	},
+	"prettier": "@wordpress/prettier-config"
+}

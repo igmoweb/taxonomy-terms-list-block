@@ -1,0 +1,11 @@
+build
+build-wporg
+bin
+assets-wporg
+inc
+languages
+node_modules
+svn
+tests
+vendor
+package-lock.json

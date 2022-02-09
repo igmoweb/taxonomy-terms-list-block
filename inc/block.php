@@ -38,9 +38,7 @@ function render( $attributes, $content, $block ) {
 		return '';
 	}
 
-	// phpcs:ignore HM.Security.ValidatedSanitizedInput.InputNotSanitized,HM.Security.ValidatedSanitizedInput.MissingUnslash
-	$preview_post_terms = $_GET['previewPostTerms'] ?? [];
-	$preview_post_terms = $is_preview ? array_map( 'absint', $preview_post_terms ) : null;
+	$preview_post_terms = isset( $_GET['previewPostTerms'] ) && is_array( $_GET['previewPostTerms'] ) ? array_map( 'absint', $_GET['previewPostTerms'] ) : null;
 
 	if ( $preview_post_terms === null ) {
 		$post_terms = get_the_terms( $block->context['postId'], $attributes['term'] );

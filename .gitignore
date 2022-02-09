@@ -2,6 +2,7 @@
 /node_modules/
 /svn/
 /build/
-/build-wporg/
+/taxonomy-terms-list-block/
 languages/taxonomyblock.pot
 languages/taxonomyblock-es_ES-backup*
+.DS_Store

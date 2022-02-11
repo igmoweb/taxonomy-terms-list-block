@@ -75,8 +75,14 @@ module.exports = function (grunt) {
 		},
 
 		shell: {
-			command:
-				'svn co https://plugins.svn.wordpress.org/taxonomy-terms-list-block svn',
+			checkout: {
+				command:
+					'svn co https://plugins.svn.wordpress.org/taxonomy-terms-list-block svn',
+			},
+			potfile: {
+				command:
+					'docker run -v $PWD/build-wporg:/var/www/html --workdir=/var/www/html wordpress:cli i18n make-pot --exclude=build . languages/taxonomy-terms-list-block.pot',
+			},
 		},
 
 		copy: {
@@ -144,6 +150,4 @@ module.exports = function (grunt) {
 		'clean:svn',
 		'copy:svn',
 	]);
-
-	grunt.registerTask('dopot', 'makepot');
 };

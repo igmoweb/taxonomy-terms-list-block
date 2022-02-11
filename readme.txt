@@ -6,44 +6,22 @@ Tested up to: %%testedupto%%
 Stable tag: %%version%%
 License: GPLv2 or later
 
-Add content before or after every post, page or Custom Post Type.
+Displays a list of a post terms for a selected taxonomy.
 
 == Description ==
-Append or Prepend Content allows you to append or prepend content to any Post Type on your site. You can even use shortcodes or HTML.
+Show a list of terms assigned to the current post in the specified taxonomy. It also works in the new Query block.
 
 == Installation ==
 1. Visit Plugins > Add New
-2. Search for 'Append or Prepend Content'
-3. Activate Append or Prepend Content from your Plugins page.
-4. Navigate to Settings > Writing and fill the plugin options
+2. Search for 'Taxonomy Terms List Block'
+3. Activate Taxonomy Terms List Block from your Plugins page.
+4. Open your block editor. Now you can add a new Taxonomy Terms List block.
 
 == Screenshots ==
-1. **Plugin Settings**
+1. **Block options**
+2. **Block content**
 
 == Changelog ==
-
-= 2.0.1 =
-Fix: Some post types were not appearing in the post type selector.
-
-= 2.0 =
-Edit the appended/prepended code in Block Editor
-
-= 1.3.1 =
-Fix: Content was displayed at blog page even if archive option was not selected
-Fix: Spanish translation
-Added new filter to prevent content display
-
-= 1.3 =
-Added option to display/hide content in single posts/pages
-
-= 1.2 =
-Added option to display/hide content in archive pages
-
-= 1.1.1 =
-Updated compatibility with WordPress 5.2
-
-= 1.1 =
-Added media buttons and HTML mode in editors
 
 = 1.0 =
 First release

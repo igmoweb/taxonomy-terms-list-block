@@ -8,5 +8,5 @@ export default function useTaxonomies(postType) {
 		return (select('core').getTaxonomies() || []).filter(
 			(taxonomy) => taxonomy?.visibility?.publicly_queryable
 		);
-	}).filter(({ types }) => types.indexOf(postType) > -1);
+	});
 }

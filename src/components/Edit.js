@@ -14,7 +14,13 @@ const Edit = ({ attributes, context, setAttributes }) => {
 	const { term, textAlign } = attributes;
 	const { postId, postType } = context;
 
-	const taxonomies = useTaxonomies(postType);
+	const allTaxonomies = useTaxonomies(postType);
+	const postTypeTaxonomies = allTaxonomies.filter(
+		({ types }) => types.indexOf(postType) > -1
+	);
+
+	const taxonomies =
+		postTypeTaxonomies.length === 0 ? allTaxonomies : postTypeTaxonomies;
 
 	const selectedTerm = useSelect(
 		(select) => {
@@ -31,6 +37,12 @@ const Edit = ({ attributes, context, setAttributes }) => {
 		postType,
 		term: selectedTerm,
 	});
+
+	const postTypeHasTaxonomy = postTypeTaxonomies.some(
+		({ rest_base: restBase }) => {
+			return restBase === term;
+		}
+	);
 
 	useEffect(() => {
 		if (postTerms === null) {
@@ -56,8 +68,13 @@ const Edit = ({ attributes, context, setAttributes }) => {
 					setAttributes={setAttributes}
 				/>
 			)}
-			{isLoading && term && <Spinner />}
-			{term && !isLoading && (
+			{isLoading && term && postTypeHasTaxonomy && <Spinner />}
+			{term && !postTypeHasTaxonomy && (
+				<Placeholder
+					instructions={__('Taxonomy Terms List', 'taxonomyblock')}
+				/>
+			)}
+			{term && !isLoading && postTypeHasTaxonomy && (
 				<ServerSideRender
 					attributes={attributes}
 					block="taxonomy-terms-list/block"

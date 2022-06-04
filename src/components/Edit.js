@@ -7,7 +7,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 import classnames from 'classnames';
 import Settings from './Settings';
 import { Placeholder, Spinner } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { store as coreStore } from '@wordpress/core-data';
 
 const Edit = ({ attributes, context, setAttributes }) => {
@@ -38,11 +38,11 @@ const Edit = ({ attributes, context, setAttributes }) => {
 		term: selectedTerm,
 	});
 
-	const postTypeHasTaxonomy = postTypeTaxonomies.some(
-		({ rest_base: restBase }) => {
-			return restBase === term;
-		}
-	);
+	const postTypeHasTaxonomy = postTypeTaxonomies.some(({ slug }) => {
+		return slug === term;
+	});
+
+	console.log({ postTypeHasTaxonomy, term, postTypeTaxonomies });
 
 	useEffect(() => {
 		if (postTerms === null) {
@@ -71,7 +71,10 @@ const Edit = ({ attributes, context, setAttributes }) => {
 			{isLoading && term && postTypeHasTaxonomy && <Spinner />}
 			{term && !postTypeHasTaxonomy && (
 				<Placeholder
-					instructions={__('Taxonomy Terms List', 'taxonomyblock')}
+					instructions={__(
+						"Taxonomy Terms List: This post hasn't got the %s taxonomy associated. This may happen inside the block editor context depending on the page you are trying to edit. The taxonomy terms list here will be replaced for an actual list in the website.",
+						'taxonomyblock'
+					)}
 				/>
 			)}
 			{term && !isLoading && postTypeHasTaxonomy && (

@@ -23,6 +23,9 @@ Show a list of terms assigned to the current post in the specified taxonomy. It 
 
 == Changelog ==
 
+= 1.0.2 =
+Fix: Taxonomy terms previsualization was not working in the block editor.
+
 = 1.0.1 =
 Allow to select any taxonomy if the current post has no taxonomies linked.
 

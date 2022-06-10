@@ -1,3 +1,4 @@
+import styles from '../styles/editor.css';
 import useTaxonomies from '../hooks/use-taxonomies';
 import usePostTerms from '../hooks/use-post-terms';
 import { useSelect } from '@wordpress/data';
@@ -7,7 +8,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 import classnames from 'classnames';
 import Settings from './Settings';
 import { Placeholder, Spinner } from '@wordpress/components';
-import { __, sprintf } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { store as coreStore } from '@wordpress/core-data';
 
 const Edit = ({ attributes, context, setAttributes }) => {
@@ -41,8 +42,6 @@ const Edit = ({ attributes, context, setAttributes }) => {
 	const postTypeHasTaxonomy = postTypeTaxonomies.some(({ slug }) => {
 		return slug === term;
 	});
-
-	console.log({ postTypeHasTaxonomy, term, postTypeTaxonomies });
 
 	useEffect(() => {
 		if (postTerms === null) {

@@ -24,6 +24,10 @@
 		"title": {
 			"type": "string",
 			"default": ""
+		},
+		"textColor": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"icon": "tag",
@@ -31,11 +35,16 @@
 	"supports": {
 		"html": false,
 		"align": ["wide", "full"],
+		"color": {
+			"text": true,
+			"background": false
+		},
 		"typography": {
 			"lineHeight": true,
 			"fontSize": true
 		}
 	},
 	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
 	"style": "wp-block-taxonomy-terms-list-block"
 }

@@ -63,7 +63,7 @@ function render( $attributes, $content, $block ) {
 
 	$separator = empty( $attributes['separator'] ) ? ' ' : $attributes['separator'];
 
-	$wrapper_attributes = get_block_wrapper_attributes( [ 'class' => $classes ] );
+	$wrapper_attributes = ! $is_preview ? get_block_wrapper_attributes( [ 'class' => $classes ] ) : '';
 
 	$links = [];
 	foreach ( $post_terms as $term ) {

@@ -72,7 +72,7 @@ const Edit = ({ attributes, context, setAttributes }) => {
 					label={__('Loading terms…', 'taxonomyblock')}
 				/>
 			)}
-			{term && !postTypeHasTaxonomy && (
+			{term && !postTypeHasTaxonomy && !isLoading && (
 				<Placeholder
 					icon="tag"
 					label="Taxonomy Terms List"
@@ -97,6 +97,8 @@ const Edit = ({ attributes, context, setAttributes }) => {
 			)}
 			{!term && (
 				<Placeholder
+					icon="tag"
+					label="Taxonomy Terms List"
 					instructions={__(
 						'Please, select a taxonomy in the block options',
 						'taxonomyblock'

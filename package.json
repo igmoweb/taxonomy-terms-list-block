@@ -6,6 +6,7 @@
 	"scripts": {
 		"build": "run-p build:*",
 		"build:scripts": "wp-scripts build",
+		"build:translations": "docker run -v \"$(pwd)\"/build-wporg:/var/www/html --workdir=/var/www/html wordpress:cli i18n make-pot --exclude=build . languages/taxonomy-terms-list-block.pot",
 		"build:grunt": "grunt",
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses",

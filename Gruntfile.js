@@ -81,7 +81,7 @@ module.exports = function (grunt) {
 			},
 			potfile: {
 				command:
-					'docker run -v $PWD/build-wporg:/var/www/html --workdir=/var/www/html wordpress:cli i18n make-pot --exclude=build . languages/taxonomy-terms-list-block.pot',
+					'docker run -v "$(PWD)"/build-wporg:/var/www/html --workdir=/var/www/html wordpress:cli i18n make-pot --exclude=build . languages/taxonomy-terms-list-block.pot',
 			},
 		},
 

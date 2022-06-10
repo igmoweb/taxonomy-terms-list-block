@@ -66,12 +66,22 @@ const Edit = ({ attributes, context, setAttributes }) => {
 					setAttributes={setAttributes}
 				/>
 			)}
-			{isLoading && term && postTypeHasTaxonomy && <Spinner />}
+			{isLoading && term && postTypeHasTaxonomy && (
+				<Placeholder
+					icon="tag"
+					label={__('Loading terms...', 'taxonomyblock')}
+				/>
+			)}
 			{term && !postTypeHasTaxonomy && (
 				<Placeholder
-					instructions={__(
-						"Taxonomy Terms List: This post hasn't got the %s taxonomy associated. This may happen inside the block editor context depending on the page you are trying to edit. The taxonomy terms list here will be replaced for an actual list in the website.",
-						'taxonomyblock'
+					icon="tag"
+					label="Taxonomy Terms List"
+					instructions={sprintf(
+						__(
+							"This post hasn't got the %s taxonomy associated. This may happen inside the block editor context depending on the page you are trying to edit. The taxonomy terms list will be replaced for an actual list in the website.",
+							'taxonomyblock'
+						),
+						term
 					)}
 				/>
 			)}

@@ -6,11 +6,10 @@ import ServerSideRender from '@wordpress/server-side-render';
 import { useBlockProps } from '@wordpress/block-editor';
 import classnames from 'classnames';
 import Settings from './Settings';
-import { Placeholder, Spinner } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+import { Placeholder } from '@wordpress/components';
+import { __, sprintf } from '@wordpress/i18n';
 import { store as coreStore } from '@wordpress/core-data';
 
-console.log('dfadsfsdfs');
 const Edit = ({ attributes, context, setAttributes }) => {
 	const { term, textAlign } = attributes;
 	const { postId, postType } = context;
@@ -70,7 +69,7 @@ const Edit = ({ attributes, context, setAttributes }) => {
 			{isLoading && term && postTypeHasTaxonomy && (
 				<Placeholder
 					icon="tag"
-					label={__('Loading terms...', 'taxonomyblock')}
+					label={__('Loading terms…', 'taxonomyblock')}
 				/>
 			)}
 			{term && !postTypeHasTaxonomy && (
@@ -78,6 +77,7 @@ const Edit = ({ attributes, context, setAttributes }) => {
 					icon="tag"
 					label="Taxonomy Terms List"
 					instructions={sprintf(
+						// translators: %s: Taxonomy name
 						__(
 							"This post hasn't got the %s taxonomy associated. This may happen inside the block editor context depending on the page you are trying to edit. The taxonomy terms list will be replaced for an actual list in the website.",
 							'taxonomyblock'

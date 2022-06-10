@@ -16,8 +16,8 @@ const Settings = ({ taxonomies, attributes, setAttributes }) => {
 					<TaxonomySelector
 						taxonomies={taxonomies}
 						selected={term}
-						onChange={(term) => {
-							setAttributes({ term });
+						onChange={(value) => {
+							setAttributes({ term: value });
 						}}
 					/>
 				</PanelBody>

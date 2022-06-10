@@ -37,7 +37,11 @@
 		"align": ["wide", "full"],
 		"color": {
 			"text": true,
-			"background": false
+			"background": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
 		},
 		"typography": {
 			"lineHeight": true,

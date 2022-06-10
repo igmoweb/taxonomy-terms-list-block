@@ -23,22 +23,22 @@
 	"author": "Ignacio Cruz <igmoweb@gmail.com>",
 	"license": "ISC",
 	"devDependencies": {
-		"@wordpress/prettier-config": "^1.1.1",
-		"@wordpress/scripts": "^19.2.2",
-		"grunt": "^1.0.4",
+		"@wordpress/prettier-config": "^1.3.0",
+		"@wordpress/scripts": "^23.2.0",
+		"grunt": "^1.5.3",
 		"grunt-checktextdomain": "^1.0.1",
-		"grunt-contrib-clean": "^2.0.0",
+		"grunt-contrib-clean": "^2.0.1",
 		"grunt-contrib-copy": "^1.0.0",
 		"grunt-regex-replace": "^0.4.0",
-		"grunt-replace": "^1.0.1",
+		"grunt-replace": "^2.0.2",
 		"grunt-search": "^0.1.8",
-		"grunt-shell": "^3.0.1",
+		"grunt-shell": "^4.0.0",
 		"grunt-wp-i18n": "^1.0.3",
-		"husky": "^3.1.0",
-		"lint-staged": "^9.5.0",
+		"husky": "^8.0.1",
+		"lint-staged": "^13.0.1",
 		"load-grunt-tasks": "^5.1.0",
 		"npm-run-all": "^4.1.5",
-		"prettier": "^2.5.1"
+		"prettier": "^2.6.2"
 	},
 	"husky": {
 		"hooks": {
@@ -49,14 +49,19 @@
 		"**/*.php": [
 			"./vendor/bin/phpcbf --standard=phpcs.xml .",
 			"git add"
+		],
+		"**/*.js": [
+			"npm run lint:js",
+			"git add"
 		]
 	},
 	"testedupto": "5.9",
 	"requires": "5.8",
 	"requires_php": "7.4",
 	"dependencies": {
-		"@wordpress/edit-post": "^5.0.17",
-		"@wordpress/plugins": "^4.0.6"
+		"@wordpress/data": "^6.10.0",
+		"@wordpress/edit-post": "^6.7.0",
+		"@wordpress/plugins": "^4.8.0"
 	},
 	"prettier": "@wordpress/prettier-config"
 }

@@ -10,6 +10,7 @@ import { Placeholder, Spinner } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import { store as coreStore } from '@wordpress/core-data';
 
+console.log('dfadsfsdfs');
 const Edit = ({ attributes, context, setAttributes }) => {
 	const { term, textAlign } = attributes;
 	const { postId, postType } = context;

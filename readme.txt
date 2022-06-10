@@ -23,6 +23,11 @@ Show a list of terms assigned to the current post in the specified taxonomy. It 
 
 == Changelog ==
 
+= 1.1.0 =
+Enhancement: Support custom background and text color.
+Enhancement: Support custom spacing (margin/padding)
+Some other UX improvements.
+
 = 1.0.2 =
 Fix: Taxonomy terms previsualization was not working in the block editor.
 

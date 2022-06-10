@@ -1,4 +1,3 @@
-import styles from '../styles/editor.css';
 import useTaxonomies from '../hooks/use-taxonomies';
 import usePostTerms from '../hooks/use-post-terms';
 import { useSelect } from '@wordpress/data';

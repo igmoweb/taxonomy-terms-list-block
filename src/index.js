@@ -1,3 +1,4 @@
+import './styles/editor.css';
 import { registerBlockType } from '@wordpress/blocks';
 import Edit from './components/Edit';
 

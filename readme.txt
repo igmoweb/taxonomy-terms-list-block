@@ -23,6 +23,9 @@ Show a list of terms assigned to the current post in the specified taxonomy. It 
 
 == Changelog ==
 
+= 1.1.1 =
+Fix: Some of the strings were not translatable. Props to Christoph Herbst.
+
 = 1.1.0 =
 Enhancement: Support custom background and text color.
 Enhancement: Support custom spacing (margin/padding)

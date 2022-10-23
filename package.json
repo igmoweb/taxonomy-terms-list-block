@@ -1,6 +1,6 @@
 {
 	"name": "taxonomy-terms-list-block",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "Displays a list of a post terms for a selected taxonomy.",
 	"main": "taxonomy-block.php",
 	"scripts": {

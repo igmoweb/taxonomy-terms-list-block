@@ -75,7 +75,7 @@ const Edit = ({ attributes, context, setAttributes }) => {
 			{term && !postTypeHasTaxonomy && !isLoading && (
 				<Placeholder
 					icon="tag"
-					label="Taxonomy Terms List"
+					label={__('Taxonomy Terms List', 'taxonomyblock')}
 					instructions={sprintf(
 						// translators: %s: Taxonomy name
 						__(
@@ -98,7 +98,7 @@ const Edit = ({ attributes, context, setAttributes }) => {
 			{!term && (
 				<Placeholder
 					icon="tag"
-					label="Taxonomy Terms List"
+					label={__('Taxonomy Terms List', 'taxonomyblock')}
 					instructions={__(
 						'Please, select a taxonomy in the block options',
 						'taxonomyblock'

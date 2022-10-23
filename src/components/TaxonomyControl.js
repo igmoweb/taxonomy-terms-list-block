@@ -4,7 +4,7 @@ import { __ } from '@wordpress/i18n';
 const TaxonomySelector = ({ selected, onChange, taxonomies }) => {
 	return (
 		<SelectControl
-			label="Display terms from this taxonomy"
+			label={__('Display terms from this taxonomy', 'taxonomyblock')}
 			value={selected}
 			options={[
 				{

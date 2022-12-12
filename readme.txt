@@ -23,6 +23,9 @@ Show a list of terms assigned to the current post in the specified taxonomy. It 
 
 == Changelog ==
 
+= 1.1.2 =
+Fix: The previous version did not properly include the translated strings. Props again to Christoph Herbst.
+
 = 1.1.1 =
 Fix: Some of the strings were not translatable. Props to Christoph Herbst.
 

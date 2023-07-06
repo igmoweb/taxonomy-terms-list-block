@@ -53,7 +53,12 @@ function render( $attributes, $content, $block ) {
 	}
 
 	if ( empty( $post_terms ) ) {
-		return get_taxonomy( $attributes['term'] )->labels->no_terms ?? __( 'Term items not found.', 'taxonomyblock' );
+		if ( $is_preview ) {
+	 		return get_taxonomy( $attributes['term'] )->labels->no_terms ?? __( 'Term items not found.', 'taxonomyblock' );
+	        }
+		else {
+ 			return '';
+		}
 	}
 
 	$classes = 'taxonomy-' . $attributes['term'];
